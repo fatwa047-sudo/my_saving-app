@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Savings</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="lockscreen" id="lock">
+  <div class="lockbox">
+    <h1>🔒 My Savings</h1>
+    <p class="sub">Enter your PIN to open.</p>
+    <input type="password" id="lockPin" inputmode="numeric" maxlength="6" placeholder="PIN" autocomplete="off">
+    <p class="msg" id="lockMsg"></p>
+    <button class="add" id="unlockBtn">Unlock</button>
+    <div class="center"><button class="link" id="forgotBtn">Forgot PIN?</button></div>
+  </div>
+</div>
+
+<main class="card">
+  <h1>💰 My Savings</h1>
+  <p class="sub">Save your money, one step at a time.</p>
+
+  <section class="box total">
+    <h2>Total Saved</h2>
+    <div class="amt" id="total">KSh 0</div>
+  </section>
+
+  <section class="box streak">
+    <div class="streakmain" id="streakMain"></div>
+    <div class="small" id="streakSub"></div>
+  </section>
+
+  <section class="box">
+    <h2>My Savings Goal</h2>
+    <input type="number" id="goalInput" min="1" placeholder="Goal amount (KSh)">
+    <label class="lbl" for="deadlineInput">Deadline (when do you want to reach it?)</label>
+    <input type="date" id="deadlineInput">
+    <button class="goal" id="setGoal">Set Goal</button>
+    <div class="bar"><div class="fill" id="fill"></div></div>
+    <div class="center small" id="pct">0% saved</div>
+    <div class="center remaining" id="remaining"></div>
+    <div class="center target" id="target"></div>
+  </section>
+
+  <section class="box">
+    <h2>Add Savings</h2>
+    <input type="number" id="addAmt" min="1" placeholder="Amount (KSh)">
+    <input type="text" id="addNote" placeholder="What are you saving for?">
+    <p class="msg" id="addMsg"></p>
+    <button class="add" id="addBtn">Add Savings</button>
+  </section>
+
+  <section class="box">
+    <h2>Withdraw</h2>
+    <input type="number" id="wdAmt" min="1" placeholder="Amount (KSh)">
+    <input type="text" id="wdNote" placeholder="What is it for?">
+    <p class="msg" id="wdMsg"></p>
+    <button class="out" id="wdBtn">Withdraw</button>
+  </section>
+
+  <section class="box">
+    <h2>Monthly Summary</h2>
+    <div id="monthly"></div>
+  </section>
+
+  <section class="box">
+    <h2>History</h2>
+    <ul id="history"></ul>
+  </section>
+
+  <section class="box">
+    <h2>Security</h2>
+    <p class="small" id="pinStatus"></p>
+    <input type="password" id="newPin" inputmode="numeric" maxlength="6" placeholder="New PIN (4 to 6 digits)" autocomplete="off">
+    <p class="msg" id="pinMsg"></p>
+    <div class="tools">
+      <button class="tool" id="savePinBtn">Set PIN</button>
+      <button class="tool" id="lockNowBtn" hidden>Lock now</button>
+      <button class="tool" id="removePinBtn" hidden>Remove PIN</button>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2>Backup</h2>
+    <div class="tools">
+      <button class="tool" id="csvBtn">Export CSV</button>
+      <button class="tool" id="backupBtn">Backup</button>
+      <button class="tool" id="restoreBtn">Restore</button>
+    </div>
+    <input type="file" id="restoreFile" accept=".json" hidden>
+    <p class="msg" id="toolMsg"></p>
+    <div class="center"><button class="link" id="clearBtn">Clear all data</button></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
